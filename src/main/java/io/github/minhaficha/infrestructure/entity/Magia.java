@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
@@ -20,8 +19,16 @@ public class Magia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nivel", length = 2)
+    private int nivel;
+
     @Column(name = "nome", length = 30)
     private String nome;
 
-    @Column
+    @Column(name = "dados", length = 60)
+    private String dados;
+
+    @Column(name = "descricao", length = 500)
+    private String descricao;
+
 }
