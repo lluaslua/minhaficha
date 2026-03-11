@@ -13,6 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "inventario")
-public class Inventario {
+@Table(name = "item")
+public class Item {
 }
