@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -58,10 +60,28 @@ public class Ficha {
     @Column(name = "vida atual", length = 4)
     private int vidaAtual;
 
-
     @Column(name = "classe de armadura", length = 2)
     private int classeArmadura;
 
+    @Column(name = "pecas de cobre", length = 100)
+    private int pecasCobre;
+
+    @Column(name = "pecas de prata", length = 100)
+    private int pecasPrata;
+
+    @Column(name = "pecas de ouro", length = 100)
+    private int pecasOuro;
+
+    @Column(name = "pecas de platina", length = 100)
+    private int pecasPlatina;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_personagem", referencedColumnName = "id")
+    private List<Magia> magias;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_personagem", referencedColumnName = "id")
+    private List<Item> itens;
 
 
 
